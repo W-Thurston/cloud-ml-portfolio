@@ -1,7 +1,72 @@
-7clouds-env/
+# ----------------------
+# Python
+# ----------------------
 __pycache__/
-*.tfstate*
-*.log
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual environments
+7clouds-env/
 .env
+.env.*
+
+# Jupyter Notebooks
 .ipynb_checkpoints/
+*.ipynb~
+
+# Logs & temp
+*.log
+*.tmp
+*.bak
+.DS_Store
+
+# ----------------------
+# Terraform
+# ----------------------
+*.tfstate
+*.tfstate.*
+.terraform/
 terraform.tfvars
+terraform.tfvars.json
+.terraform.lock.hcl
+crash.log
+*.backup
+
+# Terraform plan output
+*.tfplan
+
+# ----------------------
+# Docker
+# ----------------------
+*.tar
+*.dockerfile
+.dockerignore
+
+# ----------------------
+# GitHub Actions
+# ----------------------
+.github/workflows/*.secrets.json
+.github/workflows/*.log
+*.token
+*.pem
+
+# ----------------------
+# Cloud SDK configs (optional - machine specific)
+# ----------------------
+.aws/
+.azure/
+.gcloud/
+
+# ----------------------
+# System
+# ----------------------
+.vscode/
+.idea/
+*.swp
+*.out
+*.bak
+*.tmp
+*.swp
