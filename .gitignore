@@ -1,0 +1,7 @@
+7clouds-env/
+__pycache__/
+*.tfstate*
+*.log
+.env
+.ipynb_checkpoints/
+terraform.tfvars
