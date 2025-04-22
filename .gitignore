@@ -70,3 +70,6 @@ crash.log
 *.bak
 *.tmp
 *.swp
+
+# Ignore local datasets
+shared/datasets/
