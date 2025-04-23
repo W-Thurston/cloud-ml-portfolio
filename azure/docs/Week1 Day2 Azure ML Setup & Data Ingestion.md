@@ -1,4 +1,4 @@
-# 📅 Week 1, Day 2 – Azure ML Setup & Data Ingestion
+## 📅 Week 1, Day 2 – Azure ML Setup & Data Ingestion
 
 ### 🧠 Goal:
 
@@ -120,7 +120,13 @@ df = pd.read_csv(stream)
 df.head()
 ```
 
-> Let me know if you need help generating the connection string (via az storage account show-connection-string)
+```bash
+az storage account show-connection-string \
+  --name mlw1d2storage \
+  --resource-group rg-ml-w1d2 \
+  --query connectionString \
+  --output tsv
+```
 
 ### 🧪 Exercises for Today
 
