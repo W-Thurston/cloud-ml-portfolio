@@ -47,13 +47,13 @@ aws sts get-caller-identity
 ## 📦 Step 2 – Create an S3 Bucket for ML Data
 
 ```bash
-aws s3 mb s3://ml-titanic-w1d1-wthurston --region us-east-1
+aws s3 mb s3://ml-titanic-w1d1-yourname --region us-east-1
 ```
 
 📁 Upload Titanic CSV (you can get it from [Kaggle](https://www.kaggle.com/c/titanic/data) or use a cleaned version I can provide):
 
 ```bash
-aws s3 cp titanic.csv s3://ml-titanic-w1d1-wthurston/data/
+aws s3 cp titanic.csv s3://ml-titanic-w1d1-yourname/data/
 ```
 
 ---
@@ -95,7 +95,7 @@ import pandas as pd
 from io import StringIO
 
 s3 = boto3.client('s3')
-bucket = 'ml-titanic-w1d1-wthurston'
+bucket = 'ml-titanic-w1d1-yourname'
 obj = s3.get_object(Bucket=bucket, Key='data/titanic.csv')
 
 df = pd.read_csv(obj['Body'])
@@ -113,7 +113,7 @@ If you want to try deploying the S3 bucket with Terraform:
 ```hcl
 # shared/terraform/aws-s3-bucket.tf
 resource "aws_s3_bucket" "ml_bucket" {
-  bucket = "ml-titanic-w1d1-wthurston"
+  bucket = "ml-titanic-w1d1-yourname"
   force_destroy = true
 }
 ```
