@@ -73,3 +73,6 @@ crash.log
 
 # Ignore local datasets
 shared/datasets/
+
+gcp/sevenclouds-service-account.json
+
