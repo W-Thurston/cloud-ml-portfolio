@@ -4,11 +4,11 @@
 
 ```bash
 # Set your project and region
-gcloud config set project sevenclouds
+gcloud config set project <your_project_id>
 gcloud config set compute/region us-central1
 
 # Create Cloud SQL instance (PostgreSQL)
-gcloud sql instances create sevenclouds-postgres \
+gcloud sql instances create <your_project_id>-postgres \
   --database-version=POSTGRES_14 \
   --cpu=1 \
   --memory=4GiB \
@@ -21,11 +21,11 @@ gcloud sql instances create sevenclouds-postgres \
 
 ```bash
 # Create a database inside the instance
-gcloud sql databases create titanic_db --instance=sevenclouds-postgres
+gcloud sql databases create titanic_db --instance=<your_project_id>-postgres
 
 # Create a custom user (optional)
 gcloud sql users create ml_user \
-  --instance=sevenclouds-postgres \
+  --instance=<your_project_id>-postgres \
   --password=MLuserSecurePwd2024
 ```
 
@@ -48,8 +48,8 @@ sudo mv cloud-sql-proxy /usr/local/bin/
 
 ```bash
 cloud-sql-proxy \
-  --credentials-file=gcp/sevenclouds-service-account.json \
-  sevenclouds:us-central1:sevenclouds-postgres
+  --credentials-file=gcp/<your_project_id>-service-account.json \
+  <your_project_id>:us-central1:<your_project_id>-postgres
 ```
 
 This exposes your DB at `localhost:5432`.
@@ -108,7 +108,7 @@ df.head()
 ## ✅ Cleanup (When Done)
 
 ```bash
-gcloud sql instances delete sevenclouds-postgres
+gcloud sql instances delete <your_project_id>-postgres
 ```
 
 ---
